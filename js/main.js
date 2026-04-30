@@ -20,8 +20,14 @@ const ITEMS = {
     { id: "post-4", title: "Google Search Console への登録", note: "サイトマップの送信も行う" },
     { id: "post-5", title: "ページ速度の計測",               note: "PageSpeed Insights でスコア確認" },
     { id: "post-6", title: "アクセス解析の動作確認",         note: "セッションが計測されているか" },
-    { id: "post-7", title: "バックアップ体制の確認",         note: "定期バックアップの設定" },
-    { id: "post-8", title: "公開告知",                       note: "SNS・メルマガ・関係者への連絡" },
+    { id: "post-7",  title: "バックアップ体制の確認",                       note: "定期バックアップの設定" },
+    { id: "post-8",  title: "公開告知",                                     note: "SNS・メルマガ・関係者への連絡" },
+    { id: "post-9",  title: "SiteGuard の有効化",                           note: "管理画面のログイン保護が有効になっているか確認" },
+    { id: "post-10", title: "パーマリンク設定の再保存（リニューアル時）",   note: "設定＞パーマリンク設定で何も変更せず保存（リライトルール更新）" },
+    { id: "post-11", title: "noindex の解除（テスト環境→本番移行時）",     note: "metaタグやプラグインで noindex が残っていないか確認" },
+    { id: "post-12", title: "検索エンジンでの表示設定",                     note: "管理画面＞設定＞表示設定＞「検索エンジンがサイトをインデックスしないようにする」のチェックを外す" },
+    { id: "post-13", title: "Basic認証の解除（テスト環境使用時）",          note: "テスト用のアクセス制限が残っていないか確認" },
+    { id: "post-14", title: "キャッシュクリアの確認",                       note: "ブラウザ・サーバー・CDNのキャッシュをクリアして最新状態を確認" },
   ],
 };
 
