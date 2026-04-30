@@ -71,15 +71,19 @@ function render() {
       const li = document.createElement("li");
       if (checked) li.classList.add("checked");
 
+      const isCustom = item.id.startsWith("custom-");
+
       li.innerHTML = `
         <input type="checkbox" id="${item.id}" ${checked ? "checked" : ""}>
         <label class="item-text" for="${item.id}">
           <div class="title">${escapeHtml(item.title)}</div>
           ${item.note ? `<div class="note">${escapeHtml(item.note)}</div>` : ""}
         </label>
+        ${isCustom ? `<button class="delete-btn" aria-label="削除" data-id="${item.id}">削除</button>` : ""}
       `;
 
       li.addEventListener("click", e => {
+        if (e.target.classList.contains("delete-btn")) return;
         if (e.target.tagName === "A") return;
         const cb = li.querySelector("input[type=checkbox]");
         const newVal = e.target === cb ? cb.checked : !cb.checked;
@@ -89,6 +93,17 @@ function render() {
         saveState(s);
         render();
       });
+
+      if (isCustom) {
+        li.querySelector(".delete-btn").addEventListener("click", () => {
+          const custom = loadCustomItems().filter(i => i.id !== item.id);
+          saveCustomItems(custom);
+          const s = loadState();
+          delete s[item.id];
+          saveState(s);
+          render();
+        });
+      }
 
       ul.appendChild(li);
     });

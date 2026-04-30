@@ -169,6 +169,20 @@ header p {
 }
 .reset-btn:hover { border-color: #ef4444; color: #ef4444; }
 
+.delete-btn {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  background: transparent;
+  color: #bbb;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+  align-self: center;
+}
+.delete-btn:hover { border-color: #ef4444; color: #ef4444; }
+
 .add-item-form {
   display: flex;
   gap: 8px;
